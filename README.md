@@ -10,19 +10,19 @@ First Create Your Plugin Metadata <br>
  * Version: 0.9<br>
  * Author: Zach Desiatnyk<br>
  * Author URI: http://www.zachdesiatnyk.com<br>
- */ <br>
+ */ <br><br>
  
 Once Complete, move onto your plugin. Here is what I created but here is the reference to the official [Elementor Form API](https://developers.elementor.com/forms-api/). Create your parameters which will consist of Elementor's method to create new users and the name of your function (which we are about to create). <br><br>
 
-add_action( 'elementor_pro/forms/new_record', 'choice_elementor_form_user_registration', 10, 2);<br>
+add_action( 'elementor_pro/forms/new_record', 'choice_elementor_form_user_registration', 10, 2);<br><br>
 
- Create your function. Make sure your function parameters match Elementors, which are $record and $handler, which are pretty obvious to see what they do. Also, make sure your get_form_settings **MATCHES** the name of your elementor form.<br><br>
+Create your function. Make sure your function parameters match Elementors, which are $record and $handler, which are pretty obvious to see what they do. Also, make sure your get_form_settings **MATCHES** the name of your elementor form.<br><br>
 
 function choice_elementor_form_user_registration ($record, $handler) {<br>
     $form_name = $record->get_form_settings( 'form_name' );<br>
 
-    if ( 'REGISTRATION_FORM' !== $form_name ) {
-        return;
+    if ( 'REGISTRATION_FORM' !== $form_name ) {<br>
+        return;<br>
     }<br><br>
     
 All we are doing here is creating a variable that will grab the data from your form fields and then transfer that data into Elementor's formatted data for record keeping. You then create the variables for all your form fields, which must match the label of your elementor form fields. Once this is complete, the $user varaible will create a new user with the data provided from yuor form fields, that have been sanitzed using WP's sanitize function.<br><br>

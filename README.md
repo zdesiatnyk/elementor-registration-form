@@ -12,7 +12,7 @@ First Create Your Plugin Metadata <br>
  * Author URI: http://www.zachdesiatnyk.com
  */ <br>
  
- Once Complete, move onto your plugin. Here is what I created but here is the reference to the official [Elementor Form API](https://developers.elementor.com/forms-api/). Create your parameters which will consist of Elementor's method to create new users and the name of your function (which we are about to create).
+Once Complete, move onto your plugin. Here is what I created but here is the reference to the official [Elementor Form API](https://developers.elementor.com/forms-api/). Create your parameters which will consist of Elementor's method to create new users and the name of your function (which we are about to create). <br>
 
 add_action( 'elementor_pro/forms/new_record', 'choice_elementor_form_user_registration', 10, 2);
 

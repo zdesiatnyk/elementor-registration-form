@@ -28,9 +28,9 @@ function choice_elementor_form_user_registration ($record, $handler) {<br>
 4. All we are doing here is creating a variable that will grab the data from your form fields and then transfer that data into Elementor's formatted data for record keeping. You then create the variables for all your form fields, which must match the label of your elementor form fields. Once this is complete, the $user varaible will create a new user with the data provided from yuor form fields, that have been sanitzed using WP's sanitize function.<br><br>
 
     $form_data = $record->get_formatted_data();<br>
-    $username = $form_data(sanitize_text_field(['username']));<br>
-    $password = $form_data(sanitize_text_field(['password']));<br>
-    $email = $form_data(sanitize_text_field(['email']));<br>
+     $username = sanitize_text_field($form_data['username']);<br>
+    $password = sanitize_text_field($form_data['password']);<br>
+    $email = sanitize_text_field($form_data['email']);<br>
     $user = wp_create_user($username, $password, $email);<br><br>
 
   5. Simple error handling message.<br><br>
@@ -43,7 +43,7 @@ function choice_elementor_form_user_registration ($record, $handler) {<br>
     
   6. This just inputs the First Name's and Last Names's into WP's User Creation process. Its not necessary.<br><br>
 
-    $fName = $form_data(sanitize_text_field(["firstname"]));<br>
-    $lName = $form_data(sanitize_text_field(["lastname"]));<br>
+    $fName = sanitize_text_field($form_data["firstname"]);<br>
+    $lName = sanitize_text_field($form_data["lastname"]);<br>
     wp_update_user(array("ID"=>$user,"first_name"=>$fName,"last_name"=>$lName));<br>
 };

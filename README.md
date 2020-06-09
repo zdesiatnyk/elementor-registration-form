@@ -25,7 +25,7 @@ function choice_elementor_form_user_registration ($record, $handler) {<br>
         return;<br>
     }<br><br>
     
-4. All we are doing here is creating a variable that will grab the data from your form fields and then transfer that data into Elementor's formatted data for record keeping. You then create the variables for all your form fields, which must match the label of your elementor form fields. Once this is complete, the $user varaible will create a new user with the data provided from yuor form fields, that have been sanitzed using WP's sanitize function.<br><br>
+4. All we are doing here is creating a variable that will grab the data from your form fields and then transfer that data into Elementor's formatted data for record keeping. You then create the variables for all your form fields, which must match the label of your elementor form fields. Once this is complete, the $user variable will create a new user with the data provided from your form fields, that have been sanitzed using WP's sanitize function.<br><br>
 
     $form_data = $record->get_formatted_data();<br>
      $username = sanitize_text_field($form_data['username']);<br>

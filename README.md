@@ -14,6 +14,8 @@ How to create a WP plugin that adds WP registration functionality into an Elemen
  
 2. Once Complete, move onto your plugin. Here is what I created but here is the reference to the official [GitHub](http://github.com) Create your parameters which will consist of Elementor's method to create new users and the name of your function (which we are about to create). <br><br>
 
+[I'm an inline-style link](https://www.google.com)
+
 add_action( 'elementor_pro/forms/new_record', 'choice_elementor_form_user_registration', 10, 2);<br><br>
 
 3. Create your function. Make sure your function parameters match Elementors, which are $record and $handler, which are pretty obvious to see what they do. Also, make sure your get_form_settings **MATCHES** the name of your elementor form.<br><br>
